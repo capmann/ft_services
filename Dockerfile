@@ -1,21 +1,16 @@
 FROM alpine:latest
 
 RUN apk update\
-		&& apk add nginx\
-		&& apk add wget
-RUN  apk add php-fpm\ 
-	&& apk add php7\
-	&& apk add php-mysqli
-RUN wget https://wordpress.org/latest.tar.gz\
-	&& tar -xzvf latest.tar.gz\
-	&& mkdir -p /run/nginx 
+		&& apk add nginx openssl\
+		&& mkdir /run/nginx
 
-ADD default.conf /etc/nginx/conf.d/default.conf
-ADD wp-config.php /wordpress/wp-config.php
+ADD default.conf /etc/nginx/conf.d
+ADD index.html var/www
 
-RUN chmod 777 /wordpress
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=FR/ST=./L=Paris/O=cmarteau=./CN=192.168.49.240"
 
 EXPOSE 80
 EXPOSE 443
 
-ENTRYPOINT php-fpm7 && nginx -g 'daemon off;'
+ENTRYPOINT nginx -g 'daemon off;'
+
