@@ -391,7 +391,7 @@ CREATE TABLE `wp_usermeta` (
 --
 
 INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES
-(1, 1, 'nickname', 'ljurdant'),
+(1, 1, 'nickname', 'cmarteau'),
 (2, 1, 'first_name', ''),
 (3, 1, 'last_name', ''),
 (4, 1, 'description', ''),
@@ -463,7 +463,7 @@ CREATE TABLE `wp_users` (
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
 (1, 'cmarteau', '$P$BgWfe6QrTcXHDrlxN0mRxK3l0NaCPj1', 'cmarteau', 'cmarteau@gmail.com', 'http://192.168.49.240:5050', '2021-02-07 13:14:30', '', 0, 'cmarteau'),
-(2, 'bobby', '$P$ByTFflt9ULWyL8jH53RnZReVoPeEDG1', 'ft_caputchar', 'ft_caputchar@yahoo.com', '', '2021-02-07 13:17:16', '1612703836:$P$BMQhz260lMoO4EhmOOKsdwaHNSt/ej.', 0, 'ft_caputchar'),
+(2, 'ft_caputchar', '$P$ByTFflt9ULWyL8jH53RnZReVoPeEDG1', 'ft_caputchar', 'ft_caputchar@yahoo.com', '', '2021-02-07 13:17:16', '1612703836:$P$BMQhz260lMoO4EhmOOKsdwaHNSt/ej.', 0, 'ft_caputchar'),
 (3, 'bob', '$P$BYFi65iCYvHy.CkHJE4MInJGe/tUEh0', 'bob', 'bob@gmail.com', '', '2021-02-07 13:17:48', '1612703868:$P$BTpU4ziNYinMwZkM1QZ/8subcJtNev0', 0, 'bob marley');
 
 --

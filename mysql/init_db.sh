@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 /etc/init.d/mariadb setup
-sed -i 's/skip-networking/# skip-networking/g' /etc/my.cnf.d.mariadb-server.cnf
+sed -i 's/skip-networking/# skip-networking/g' /etc/my.cnf.d/mariadb-server.cnf
 service mariadb start
 
 if [ ! -d /var/lib/mysql/wordpress ]

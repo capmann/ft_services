@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress-deployment
+  name: grafana-deployment
   labels:
-    app: wordpress
+    app: grafana
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: grafana
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
-        tier: frontend		
+        app: grafana
+        tier: frontend
     spec:
       restartPolicy: Always
       containers:
-      - name: wordpress
-        image: wordpress:latest
+      - name: grafana
+        image: grafana:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 5050
-          name: wpport
+        - containerPort: 3000
+          name: grafana
