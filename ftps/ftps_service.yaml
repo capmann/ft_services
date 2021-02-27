@@ -24,13 +24,5 @@ spec:
       protocol: TCP
       port: 30101
       targetPort: 30101
-    - name: ftps30102
-      protocol: TCP
-      port: 30102
-      targetPort: 30102
-    - name: ftps30103
-      protocol: TCP
-      port: 30103
-      targetPort: 30103
   type: LoadBalancer
   loadBalancerIP: 192.168.49.240
