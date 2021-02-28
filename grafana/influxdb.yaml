@@ -1,12 +1,13 @@
 apiVersion: 1
 
 datasources:
-  - name: influxdb
+  - name: grafana
     type: influxdb
     access: proxy
     database: grafana
     user: cmarteau
     password: yo
-    url: 192.168.49.240:8086
+    url: http://influxdb-service:8086
     jsonData:
       httpMode: GET
+      timeInterval: "1s"
